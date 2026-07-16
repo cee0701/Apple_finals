@@ -12,7 +12,7 @@ body {
   padding-top: 52px;
 }
 
-/* ── navigation sticky */
+/* ── Navigation (fixed / floating) ── */
 .nav {
   position: fixed;
   top: 0;
@@ -84,6 +84,7 @@ body {
   padding: 8px 4px;
 }
 
+/* ── Hero ── */
 .hero {
   background: #000;
   text-align: center;
@@ -115,7 +116,7 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-
+/* ── Product gallery ── */
 .gallery {
   background: #fff;
   padding: 48px 48px 64px;
@@ -137,6 +138,7 @@ body {
   color: #000;
 }
 
+/* ── Image placeholders ── */
 .img-placeholder {
   background: #e8e8ed;
   border: 1px dashed #c7c7cc;
@@ -165,7 +167,7 @@ body {
   margin-bottom: 20px;
 }
 
-
+/* ── Feature grid ── */
 .features {
   background: #fff;
   padding: 0 48px 80px;
@@ -271,6 +273,7 @@ body {
   color: #6e6e73;
 }
 
+/* ── Product carousel (continuous loop) ── */
 .carousel {
   overflow: hidden;
   width: 100%;
@@ -288,7 +291,7 @@ body {
 
 .carousel-item {
   flex: 0 0 auto;
-  width: 346px; 
+  width: 346px; /* desktop default */
 }
 
 .carousel-item .img-placeholder {
@@ -303,7 +306,7 @@ body {
   100% { transform: translateX(-100%); } /* scroll through originals + clones */
 }
 
-
+/* ── Responsive ── */
 
 .img-placeholder img.img-odjpgz {
   transform: scaleX(1);
