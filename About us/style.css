@@ -1,0 +1,47 @@
+body {
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.hero {
+  position: relative;
+  height: 70vh;
+  background: url('apple-bg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+/* Subtle gradient overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.7), rgba(255,255,255,0.2));
+  z-index: 1;
+}
+
+/* Ensure content sits above overlay */
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1, .hero p {
+  color: white;
+}
+
+.hero img {
+  max-height: 350px;
+  object-fit: cover;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    padding: 2rem 0;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+}
