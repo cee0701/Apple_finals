@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Product Catalog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Apple Product Catalog</h1>
+    <nav>
+      <ul>
+        <li><a href="#iphones">iPhones</a></li>
+        <li><a href="#ipads">iPads</a></li>
+        <li><a href="#accessories">Accessories</a></li>
+      </ul>
+    </nav>
+  </header>
+
+   <div class="controls">
+  <input type="text" id="searchBar" placeholder="Search products..." onkeyup="searchProducts()">
+  <br><br>
+  <button onclick="filterCategory('All')">All</button>
+  <button onclick="filterCategory('iphones')">iPhones</button>
+  <button onclick="filterCategory('ipads')">iPads</button>
+  <button onclick="filterCategory('accessories')">Accessories</button>
+</div>
+
+  <main>
+    <!-- iPhones -->
+    <section id="iphones">
+      <h2>iPhones</h2>
+      <div class="product-list">
+        <div class="product">
+          <img src="ip11.jfif" alt="iPhone 11">
+          <h3>iPhone 11</h3>
+          <p>Dual‑camera system, A13 Bionic chip, Night mode.</p>
+        </div>
+        <div class="product">
+          <img src="ip12.jfif" alt="iPhone 12">
+          <h3>iPhone 12</h3>
+          <p>Super Retina XDR display, 5G connectivity, Ceramic Shield.</p>
+        </div>
+        <div class="product">
+          <img src="ip13.jfif" alt="iPhone 13">
+          <h3>iPhone 13</h3>
+          <p>A15 Bionic chip, improved battery life, cinematic mode.</p>
+        </div>
+        <div class="product">
+          <img src="ip14.jfif" alt="iPhone 14">
+          <h3>iPhone 14</h3>
+          <p>Crash detection, advanced dual‑camera, all‑day battery.</p>
+        </div>
+        <div class="product">
+          <img src="ip15.jfif" alt="iPhone 15">
+          <h3>iPhone 15</h3>
+          <p>Dynamic Island, USB‑C, 48MP main camera.</p>
+        </div>
+        <div class="product">
+          <img src="ip16.jfif" alt="iPhone 16">
+          <h3>iPhone 16</h3>
+          <p>Latest A‑series chip, enhanced AI features, ProMotion display.</p>
+        </div>
+        <div class="product">
+          <img src="ip17.jfif" alt="iPhone 17">
+          <h3>iPhone 17</h3>
+          <p>Cutting‑edge performance, advanced camera system, sleek design.</p>
+        </div>
+        <!-- Pro and Pro Max series -->
+        <div class="product">
+          <img src="17pro.jfif" alt="iPhone 17 Pro">
+          <h3>iPhone 17 Pro</h3>
+          <p>Triple‑camera system, titanium build, ProMotion display.</p>
+        </div>
+        <div class="product">
+          <img src="17pm.jfif" alt="iPhone 17 Pro Max">
+          <h3>iPhone 17 Pro Max</h3>
+          <p>Largest display, best battery, ultimate performance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- iPads -->
+    <section id="ipads">
+      <h2>iPads</h2>
+      <div class="product-list">
+        <div class="product">
+          <img src="gen11.jfif" alt="iPad Gen 11">
+          <h3>iPad Gen 11</h3>
+          <p>A14 Bionic chip, 10.9‑inch display, Apple Pencil support.</p>
+        </div>
+        <div class="product">
+          <img src="air.jfif" alt="iPad Air">
+          <h3>iPad Air</h3>
+          <p>M1 chip, lightweight design, Liquid Retina display.</p>
+        </div>
+        <div class="product">
+          <img src="ipad pro.jfif" alt="iPad Pro">
+          <h3>iPad Pro</h3>
+          <p>M2 chip, ProMotion display, advanced Apple Pencil features.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessories -->
+    <section id="accessories">
+      <h2>Accessories</h2>
+      <div class="product-list">
+        <div class="product">
+          <img src="tv.jfif" alt="Apple TV 4K">
+          <h3>Apple TV 4K</h3>
+          <p>4K HDR streaming, Dolby Vision, Siri remote.</p>
+        </div>
+        <div class="product">
+          <img src="airtag.jfif" alt="Apple AirTags">
+          <h3>Apple AirTags</h3>
+          <p>Track belongings with precision using Find My app.</p>
+        </div>
+        <div class="product">
+          <img src="series8.jfif" alt="Apple Watch Series 8">
+          <h3>Apple Watch Series 8</h3>
+          <p>Advanced health sensors, fitness tracking, crash detection.</p>
+        </div>
+        <div class="product">
+          <img src="ultra.jfif" alt="Apple Watch Ultra">
+          <h3>Apple Watch Ultra</h3>
+          <p>Rugged design, extended battery life, outdoor sports features.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Apple Product Catalog</p>
+  </footer>
+   
+   <!-- JavaScript -->
+  <script>
+    
+    function searchProducts() {
+      const input = document.getElementById("searchBar").value.toLowerCase();
+      const products = document.querySelectorAll(".product");
+
+      products.forEach(product => {
+        const name = product.querySelector("h3").textContent.toLowerCase();
+        if (name.includes(input)) {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      });
+    }
+
+   
+    function filterCategory(category) {
+      const sections = document.querySelectorAll("section");
+
+      sections.forEach(section => {
+        if (category === "All" || section.id.toLowerCase().includes(category.toLowerCase())) {
+          section.style.display = "block";
+        } else {
+          section.style.display = "none";
+        }
+      });
+    }
+
+
+    function buyProduct(productName) {
+      alert("You selected " + productName + " for purchase!");
+    }
+  </script>
+</body>
+</html>
